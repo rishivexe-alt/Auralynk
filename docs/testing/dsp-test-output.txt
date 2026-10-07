@@ -1,0 +1,74 @@
+﻿
+1. CRC-16/CCITT known-answer test
+  ok   crc("123456789") = 0x29B1
+  ok   crc("") = 0xFFFF (init value)
+
+2. Packet build -> parse round trip
+  ok   round trip "Hello from Auralynk." (20 chars)
+  ok   frame size for "Hello from Aural"
+  ok   round trip "" (0 chars)
+  ok   frame size for ""
+  ok   round trip "├£ltralink Γ£ô ΓÇö acoustic m"ΓÇª (28 chars)
+  ok   frame size for "├£ltralink Γ£ô ΓÇö ac"
+  ok   round trip "µùÑµ£¼Φ¬₧πü«πâíπââπé╗πâ╝πé╕πééΘÇüΣ┐íπüºπüìπü╛πüÖ" (16 chars)
+  ok   frame size for "µùÑµ£¼Φ¬₧πü«πâíπââπé╗πâ╝πé╕πééΘÇüΣ┐íπüºπüìπü╛πüÖ"
+  ok   round trip "xxxxxxxxxxxxxxxxxxxxxxxx"ΓÇª (512 chars)
+  ok   frame size for "xxxxxxxxxxxxxxxx"
+  ok   message of 513 bytes is rejected
+
+3. Corruption and truncation
+  ok   single flipped payload bit -> crc-error
+  ok   truncated frame -> need-more
+  ok   impossible length field -> invalid
+  ok   sync pattern is 16 bits
+  ok   sync found after preamble
+  ok   0x91 alone is not a sync word
+  ok   sync word without preamble is not a frame start
+  ok   no sync in preamble + payload
+
+4. Modulate -> demodulate end to end
+  ok   48 kHz, 2048-sample blocks, 0.35 s lead-in
+  ok   48 kHz, 2048-sample blocks, 0.35 s lead-in: BER measured
+  ok   48 kHz, awkward 997-sample blocks
+  ok   48 kHz, awkward 997-sample blocks: BER measured
+  ok   44.1 kHz device rate
+  ok   44.1 kHz device rate: BER measured
+  ok   misaligned symbol phase (137-sample offset)
+  ok   misaligned symbol phase (137-sample offset): BER measured
+  ok   misaligned symbol phase (733-sample offset), mixed blocks
+  ok   misaligned symbol phase (733-sample offset), mixed blocks: BER measured
+  ok   low amplitude (0.05)
+  ok   low amplitude (0.05): BER measured
+  ok   awgn channel at 20 dB SNR
+  ok   awgn channel at 20 dB SNR: BER measured
+  ok   awgn channel at 12 dB SNR
+  ok   awgn channel at 12 dB SNR: BER measured
+  ok   5 ms symbols (200 baud)
+  ok   5 ms symbols (200 baud): BER measured
+  ok   50 ms symbols (20 baud)
+  ok   50 ms symbols (20 baud): BER measured
+  ok   long payload (240 bytes) end to end
+  ok   long payload (240 bytes) end to end: BER measured
+  ok   unicode payload end to end
+  ok   unicode payload end to end: BER measured
+  ok   large 65536-sample blocks
+  ok   large 65536-sample blocks: BER measured
+  ok   two separated frames in one stream
+
+5. Carrier detect / telemetry
+  ok   silence: never reports a carrier
+  ok   silence: input level is very low
+  ok   modulated stream: carrier detected
+  ok   modulated stream: plausible SNR
+  ok   modulated stream: one frame
+  ok   coherence of a clean carrier exceeds the 0.2 threshold
+  ok   BER reported against the transmitted reference
+  ok   mismatched carriers decode nothing
+
+6. Symbol-timing recovery (clock drift)
+  ok   +0.1% transmitter clock drift
+  ok   -0.1% transmitter clock drift
+  ok   +0.3% transmitter clock drift
+  ok   -0.3% transmitter clock drift
+
+60 passed, 0 failed

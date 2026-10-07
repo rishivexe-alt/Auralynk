@@ -1,0 +1,34 @@
+{
+  "steps": [
+    {
+      "label": "set verified 15 kHz / 16.5 kHz carriers, 20 ms symbols",
+      "ok": true,
+      "detail": "ok"
+    },
+    {
+      "label": "start receiver (real microphone)",
+      "ok": true,
+      "detail": "MICROPHONE ACTIVE · 48,000 Hz · 15,000/16,500 Hz"
+    },
+    {
+      "label": "transmit through the physical speaker",
+      "ok": true,
+      "detail": "COMPLETE · 224 SYMBOLS · 4480 MS · CRC 0x75A2"
+    },
+    {
+      "label": "decode check",
+      "ok": true,
+      "detail": "decoded \"Hello from Auralynk.\" with CRC OK"
+    }
+  ],
+  "consoleErrors": [],
+  "result": {
+    "decoded": "Hello from Auralynk.",
+    "crc": "CRC OK",
+    "bits": "6,084",
+    "crcFails": "3",
+    "packets": "1",
+    "snr": "—"
+  },
+  "screenshot": "06-physical-validation.png"
+}

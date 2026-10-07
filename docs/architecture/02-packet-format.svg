@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" font-family="Consolas, 'Cascadia Mono', 'SF Mono', Menlo, monospace" role="img" aria-label="Packet Structure">
+  <rect width="1200" height="780" fill="#08090a"/>
+  <rect x="0.5" y="0.5" width="1199" height="779" fill="none" stroke="#2b2721"/>
+  <text x="40" y="52" fill="#D4AF37" font-size="13" letter-spacing="4">AURALYNK · ARCHITECTURE 02</text>
+  <text x="40" y="86" fill="#F3F3F1" font-size="27" font-weight="bold">Packet Structure</text>
+  <text x="40" y="114" fill="#9a9a93" font-size="14">PREAMBLE → SYNC → LENGTH → PAYLOAD → CRC-16 · MSB-first, big-endian fields</text>
+  <line x1="40" y1="136" x2="1160" y2="136" stroke="#7d6a3a" stroke-width="1"/>
+  <rect x="60" y="210" width="108" height="96" fill="#141614" stroke="#7d6a3a"/>
+  <text x="114" y="246" text-anchor="middle" fill="#E8D094" font-size="15" font-weight="bold">PREAMBLE</text>
+  <text x="114" y="268" text-anchor="middle" fill="#9a9a93" font-size="12">16 bits</text>
+  <text x="114" y="288" text-anchor="middle" fill="#F3F3F1" font-size="12">1 0 1 0 … 1 0</text>
+  <rect x="168" y="210" width="119" height="96" fill="#171512" stroke="#7d6a3a"/>
+  <text x="227.5" y="246" text-anchor="middle" fill="#E8D094" font-size="15" font-weight="bold">SYNC</text>
+  <text x="227.5" y="268" text-anchor="middle" fill="#9a9a93" font-size="12">2 bytes</text>
+  <text x="227.5" y="288" text-anchor="middle" fill="#F3F3F1" font-size="12">0xD3 0x91</text>
+  <rect x="287" y="210" width="119" height="96" fill="#171512" stroke="#7d6a3a"/>
+  <text x="346.5" y="246" text-anchor="middle" fill="#E8D094" font-size="15" font-weight="bold">LENGTH</text>
+  <text x="346.5" y="268" text-anchor="middle" fill="#9a9a93" font-size="12">2 bytes</text>
+  <text x="346.5" y="288" text-anchor="middle" fill="#F3F3F1" font-size="12">payload bytes</text>
+  <rect x="406" y="210" width="497" height="96" fill="#1c1a13" stroke="#7d6a3a"/>
+  <text x="654.5" y="246" text-anchor="middle" fill="#E8D094" font-size="15" font-weight="bold">PAYLOAD</text>
+  <text x="654.5" y="268" text-anchor="middle" fill="#9a9a93" font-size="12">N bytes</text>
+  <text x="654.5" y="288" text-anchor="middle" fill="#F3F3F1" font-size="12">UTF-8 message</text>
+  <rect x="903" y="210" width="238" height="96" fill="#171512" stroke="#7d6a3a"/>
+  <text x="1022" y="246" text-anchor="middle" fill="#E8D094" font-size="15" font-weight="bold">CRC-16</text>
+  <text x="1022" y="268" text-anchor="middle" fill="#9a9a93" font-size="12">2 bytes</text>
+  <text x="1022" y="288" text-anchor="middle" fill="#F3F3F1" font-size="12">CCITT 0x1021</text>
+  <line x1="60" y1="324" x2="1140" y2="324" stroke="#2b2721"/>
+  <text x="60" y="346" fill="#9a9a93" font-size="12">START OF FRAME</text>
+  <text x="1140" y="346" text-anchor="end" fill="#9a9a93" font-size="12">END OF FRAME</text>
+  <rect x="60" y="382" width="1080" height="56" fill="#0c0e10" stroke="#2b2721"/>
+  <text x="76" y="406" fill="#D4AF37" font-size="13" font-weight="bold">PREAMBLE</text>
+  <text x="190" y="406" fill="#F3F3F1" font-size="12.5">Alternating 1/0 bits that let the receiver settle carrier gain and establish symbol cadence before real data arrives. </text>
+  <text x="190" y="426" fill="#F3F3F1" font-size="12.5">It is not counted in the CRC.</text>
+  <rect x="60" y="446" width="1080" height="56" fill="#0c0e10" stroke="#2b2721"/>
+  <text x="76" y="470" fill="#D4AF37" font-size="13" font-weight="bold">SYNC</text>
+  <text x="190" y="470" fill="#F3F3F1" font-size="12.5">A fixed 16-bit word (0xD3 0x91). The receiver requires the full preamble + sync acquisition pattern (32 bits) before i</text>
+  <text x="190" y="490" fill="#F3F3F1" font-size="12.5">t treats a frame as valid, which keeps false locks near 2^-32.</text>
+  <rect x="60" y="510" width="1080" height="56" fill="#0c0e10" stroke="#2b2721"/>
+  <text x="76" y="534" fill="#D4AF37" font-size="13" font-weight="bold">LENGTH</text>
+  <text x="190" y="534" fill="#F3F3F1" font-size="12.5">Payload size in bytes, big endian. The receiver needs it to know where the payload ends and the CRC begins. Values abo</text>
+  <text x="190" y="554" fill="#F3F3F1" font-size="12.5">ve 512 are rejected as invalid.</text>
+  <rect x="60" y="574" width="1080" height="56" fill="#0c0e10" stroke="#2b2721"/>
+  <text x="76" y="598" fill="#D4AF37" font-size="13" font-weight="bold">PAYLOAD</text>
+  <text x="190" y="598" fill="#F3F3F1" font-size="12.5">The UTF-8 message bytes. Any text is allowed, including multi-byte characters — the decoder uses a non-fatal TextDecod</text>
+  <text x="190" y="618" fill="#F3F3F1" font-size="12.5">er so a damaged frame degrades gracefully.</text>
+  <rect x="60" y="638" width="1080" height="56" fill="#0c0e10" stroke="#2b2721"/>
+  <text x="76" y="662" fill="#D4AF37" font-size="13" font-weight="bold">CRC-16</text>
+  <text x="190" y="662" fill="#F3F3F1" font-size="12.5">CRC-16/CCITT (poly 0x1021, init 0xFFFF) computed over SYNC + LENGTH + PAYLOAD. The receiver recomputes it and only rep</text>
+  <text x="190" y="682" fill="#F3F3F1" font-size="12.5">orts a message when both values match exactly.</text>
+  <text x="40" y="762" fill="#9a9a93" font-size="12">Example: "Hello from Auralynk." = 20-byte payload, 26-byte frame, 224 symbols, 4480 ms at 20 ms/symbol, CRC 0x75A2.</text>
+</svg>
+

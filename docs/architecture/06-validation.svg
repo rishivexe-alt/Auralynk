@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1104" viewBox="0 0 1200 1104" font-family="Consolas, 'Cascadia Mono', 'SF Mono', Menlo, monospace" role="img" aria-label="Validation Evidence">
+  <rect width="1200" height="1104" fill="#08090a"/>
+  <rect x="0.5" y="0.5" width="1199" height="1103" fill="none" stroke="#2b2721"/>
+  <text x="40" y="52" fill="#D4AF37" font-size="13" letter-spacing="4">AURALYNK · ARCHITECTURE 06</text>
+  <text x="40" y="86" fill="#F3F3F1" font-size="27" font-weight="bold">Validation Evidence</text>
+  <text x="40" y="114" fill="#9a9a93" font-size="14">Three different kinds of proof — each answers a different question.</text>
+  <line x1="40" y1="136" x2="1160" y2="136" stroke="#7d6a3a" stroke-width="1"/>
+  <rect x="60" y="170" width="1080" height="314" rx="3" fill="#101214" stroke="#2b2721"/>
+  <rect x="60" y="170" width="3" height="314" fill="#D4AF37"/>
+  <text x="84" y="204" fill="#D4AF37" font-size="13" letter-spacing="3">LEVEL 1</text>
+  <text x="84" y="232" fill="#F3F3F1" font-size="18" font-weight="bold">DSP UNIT / DETERMINISTIC TESTS</text>
+  <text x="84" y="262" fill="#9a9a93" font-size="13">Environment: Node.js, no browser, no audio hardware.</text>
+  <text x="84" y="284" fill="#9a9a93" font-size="13">Runs the real TypeScript sources through the Vite SSR loader —</text>
+  <text x="84" y="306" fill="#9a9a93" font-size="13">the exact code that ships in the browser.</text>
+  <text x="84" y="350" fill="#9a9a93" font-size="13">CRC-16 known answers · framing round trips · corruption and</text>
+  <text x="84" y="372" fill="#9a9a93" font-size="13">truncation · modulate → demodulate end to end at several sample</text>
+  <text x="84" y="394" fill="#9a9a93" font-size="13">rates, chunk sizes and symbol phases · AWGN at 20 dB and 12 dB ·</text>
+  <text x="84" y="416" fill="#9a9a93" font-size="13">clock drift ±0.1 % and ±0.3 % · 60 / 60 checks passing.</text>
+  <text x="84" y="460" fill="#9a9a93" font-size="13">Answers: "is the DSP algorithm correct and robust?"</text>
+  <rect x="60" y="518" width="1080" height="270" rx="3" fill="#101214" stroke="#2b2721"/>
+  <rect x="60" y="518" width="3" height="270" fill="#E8D094"/>
+  <text x="84" y="552" fill="#E8D094" font-size="13" letter-spacing="3">LEVEL 2</text>
+  <text x="84" y="580" fill="#F3F3F1" font-size="18" font-weight="bold">BROWSER / AUTOMATED E2E</text>
+  <text x="84" y="610" fill="#9a9a93" font-size="13">Environment: production bundle served by Vite, loaded in Chrome.</text>
+  <text x="84" y="654" fill="#9a9a93" font-size="13">Page loads · application mounts · Auralynk branding and favicon</text>
+  <text x="84" y="676" fill="#9a9a93" font-size="13">resolve · transmitter, receiver, Signal Lab, calibration and</text>
+  <text x="84" y="698" fill="#9a9a93" font-size="13">architecture sections render · zero console errors · zero failed</text>
+  <text x="84" y="720" fill="#9a9a93" font-size="13">network requests.</text>
+  <text x="84" y="764" fill="#9a9a93" font-size="13">Answers: "does the built application actually run in a browser?"</text>
+  <rect x="60" y="822" width="1080" height="226" rx="3" fill="#101214" stroke="#2b2721"/>
+  <rect x="60" y="822" width="3" height="226" fill="#FFFFFF"/>
+  <text x="84" y="856" fill="#FFFFFF" font-size="13" letter-spacing="3">LEVEL 3</text>
+  <text x="84" y="884" fill="#F3F3F1" font-size="18" font-weight="bold">REAL SPEAKER → AIR → MICROPHONE</text>
+  <text x="84" y="914" fill="#9a9a93" font-size="13">Environment: physical hardware, real room, no signal injection.</text>
+  <text x="84" y="936" fill="#9a9a93" font-size="13">Message "Hello from Auralynk." · F0 15,000 Hz · F1 16,500 Hz ·</text>
+  <text x="84" y="958" fill="#9a9a93" font-size="13">20 ms symbols · 48,000 Hz microphone · 224 symbols · 4480 ms.</text>
+  <text x="84" y="980" fill="#9a9a93" font-size="13">Result: decoded message matched, CRC OK (verified 2026-10-07).</text>
+  <text x="84" y="1024" fill="#9a9a93" font-size="13">Answers: "does the system survive a real acoustic channel?"</text>
+  <text x="40" y="1086" fill="#9a9a93" font-size="12">These layers are not interchangeable: passing level 1 or 2 never substitutes for a physical acoustic test.</text>
+</svg>
+

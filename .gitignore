@@ -1,0 +1,42 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment / credentials — this project needs none
+.env
+.env.*
+*.pem
+*.key
+
+# Debug audio captures (recordings used while debugging the modem)
+*.wav
+/captures/
+
+# Packaging artifacts
+*.zip
+
+# Agent / tooling scratch space
+.opencode/
+

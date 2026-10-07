@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="940" viewBox="0 0 1200 940" font-family="Consolas, 'Cascadia Mono', 'SF Mono', Menlo, monospace" role="img" aria-label="Receiver DSP Pipeline">
+  <rect width="1200" height="940" fill="#08090a"/>
+  <rect x="0.5" y="0.5" width="1199" height="939" fill="none" stroke="#2b2721"/>
+  <text x="40" y="52" fill="#D4AF37" font-size="13" letter-spacing="4">AURALYNK · ARCHITECTURE 04</text>
+  <text x="40" y="86" fill="#F3F3F1" font-size="27" font-weight="bold">Receiver DSP Pipeline</text>
+  <text x="40" y="114" fill="#9a9a93" font-size="14">Microphone PCM to verified text — every stage runs inside the browser.</text>
+  <line x1="40" y1="136" x2="1160" y2="136" stroke="#7d6a3a" stroke-width="1"/>
+  <rect x="70" y="176" width="500" height="74" rx="3" fill="#101214" stroke="#2b2721"/>
+  <rect x="70" y="176" width="3" height="74" fill="#D4AF37"/>
+  <text x="88" y="202" fill="#D4AF37" font-size="12">01</text>
+  <text x="122" y="203" fill="#F3F3F1" font-size="15" font-weight="bold">MICROPHONE</text>
+  <text x="122" y="226" fill="#9a9a93" font-size="12">getUserMedia · echo cancellation, noise suppression and AGC d…</text>
+  <line x1="320" y1="254" x2="320" y2="268" stroke="#7d6a3a" stroke-width="1.5"/>
+  <path d="M 315 267 L 325 267 L 320 274 Z" fill="#D4AF37"/>
+  <rect x="70" y="276" width="500" height="74" rx="3" fill="#101214" stroke="#2b2721"/>
+  <rect x="70" y="276" width="3" height="74" fill="#D4AF37"/>
+  <text x="88" y="302" fill="#D4AF37" font-size="12">02</text>
+  <text x="122" y="303" fill="#F3F3F1" font-size="15" font-weight="bold">CAPTURE</text>
+  <text x="122" y="326" fill="#9a9a93" font-size="12">AudioWorklet pulls 2048-sample blocks on the audio thread</text>
+  <line x1="320" y1="354" x2="320" y2="368" stroke="#7d6a3a" stroke-width="1.5"/>
+  <path d="M 315 367 L 325 367 L 320 374 Z" fill="#D4AF37"/>
+  <rect x="70" y="376" width="500" height="74" rx="3" fill="#101214" stroke="#2b2721"/>
+  <rect x="70" y="376" width="3" height="74" fill="#D4AF37"/>
+  <text x="88" y="402" fill="#D4AF37" font-size="12">03</text>
+  <text x="122" y="403" fill="#F3F3F1" font-size="15" font-weight="bold">WINDOWING / ANALYSIS</text>
+  <text x="122" y="426" fill="#9a9a93" font-size="12">16 parallel symbol-phase hypotheses, sample-count aligned</text>
+  <line x1="320" y1="454" x2="320" y2="468" stroke="#7d6a3a" stroke-width="1.5"/>
+  <path d="M 315 467 L 325 467 L 320 474 Z" fill="#D4AF37"/>
+  <rect x="70" y="476" width="500" height="74" rx="3" fill="#101214" stroke="#2b2721"/>
+  <rect x="70" y="476" width="3" height="74" fill="#D4AF37"/>
+  <text x="88" y="502" fill="#D4AF37" font-size="12">04</text>
+  <text x="122" y="503" fill="#F3F3F1" font-size="15" font-weight="bold">F0 / F1 ENERGY COMPARISON</text>
+  <text x="122" y="526" fill="#9a9a93" font-size="12">Goertzel detectors → carrier power per symbol</text>
+  <line x1="320" y1="554" x2="320" y2="568" stroke="#7d6a3a" stroke-width="1.5"/>
+  <path d="M 315 567 L 325 567 L 320 574 Z" fill="#D4AF37"/>
+  <rect x="70" y="576" width="500" height="74" rx="3" fill="#101214" stroke="#2b2721"/>
+  <rect x="70" y="576" width="3" height="74" fill="#D4AF37"/>
+  <text x="88" y="602" fill="#D4AF37" font-size="12">05</text>
+  <text x="122" y="603" fill="#F3F3F1" font-size="15" font-weight="bold">TIMING RECOVERY</text>
+  <text x="122" y="626" fill="#9a9a93" font-size="12">early/late gate nudges each hypothesis symbol period</text>
+  <rect x="630" y="176" width="500" height="74" rx="3" fill="#101214" stroke="#2b2721"/>
+  <rect x="630" y="176" width="3" height="74" fill="#D4AF37"/>
+  <text x="648" y="202" fill="#D4AF37" font-size="12">06</text>
+  <text x="682" y="203" fill="#F3F3F1" font-size="15" font-weight="bold">BIT STREAM</text>
+  <text x="682" y="226" fill="#9a9a93" font-size="12">hard decisions buffered per hypothesis</text>
+  <line x1="880" y1="254" x2="880" y2="268" stroke="#7d6a3a" stroke-width="1.5"/>
+  <path d="M 875 267 L 885 267 L 880 274 Z" fill="#D4AF37"/>
+  <rect x="630" y="276" width="500" height="74" rx="3" fill="#101214" stroke="#2b2721"/>
+  <rect x="630" y="276" width="3" height="74" fill="#D4AF37"/>
+  <text x="648" y="302" fill="#D4AF37" font-size="12">07</text>
+  <text x="682" y="303" fill="#F3F3F1" font-size="15" font-weight="bold">SYNC</text>
+  <text x="682" y="326" fill="#9a9a93" font-size="12">preamble + 0xD3 0x91 acquisition pattern (32 bits)</text>
+  <line x1="880" y1="354" x2="880" y2="368" stroke="#7d6a3a" stroke-width="1.5"/>
+  <path d="M 875 367 L 885 367 L 880 374 Z" fill="#D4AF37"/>
+  <rect x="630" y="376" width="500" height="74" rx="3" fill="#101214" stroke="#2b2721"/>
+  <rect x="630" y="376" width="3" height="74" fill="#D4AF37"/>
+  <text x="648" y="402" fill="#D4AF37" font-size="12">08</text>
+  <text x="682" y="403" fill="#F3F3F1" font-size="15" font-weight="bold">PACKET</text>
+  <text x="682" y="426" fill="#9a9a93" font-size="12">LENGTH field → payload extraction</text>
+  <line x1="880" y1="454" x2="880" y2="468" stroke="#7d6a3a" stroke-width="1.5"/>
+  <path d="M 875 467 L 885 467 L 880 474 Z" fill="#D4AF37"/>
+  <rect x="630" y="476" width="500" height="74" rx="3" fill="#101214" stroke="#2b2721"/>
+  <rect x="630" y="476" width="3" height="74" fill="#D4AF37"/>
+  <text x="648" y="502" fill="#D4AF37" font-size="12">09</text>
+  <text x="682" y="503" fill="#F3F3F1" font-size="15" font-weight="bold">CRC</text>
+  <text x="682" y="526" fill="#9a9a93" font-size="12">CRC-16/CCITT recomputed and compared</text>
+  <line x1="880" y1="554" x2="880" y2="568" stroke="#7d6a3a" stroke-width="1.5"/>
+  <path d="M 875 567 L 885 567 L 880 574 Z" fill="#D4AF37"/>
+  <rect x="630" y="576" width="500" height="74" rx="3" fill="#101214" stroke="#2b2721"/>
+  <rect x="630" y="576" width="3" height="74" fill="#D4AF37"/>
+  <text x="648" y="602" fill="#D4AF37" font-size="12">10</text>
+  <text x="682" y="603" fill="#F3F3F1" font-size="15" font-weight="bold">TEXT</text>
+  <text x="682" y="626" fill="#9a9a93" font-size="12">UTF-8 decode → message + CRC status</text>
+  <path d="M 570 613 L 604 613" fill="none" stroke="#7d6a3a" stroke-width="1.5"/>
+  <path d="M 613 608 L 613 618 L 622 613 Z" fill="#D4AF37"/>
+  <text x="600" y="601" text-anchor="middle" fill="#9a9a93" font-size="12">bits</text>
+  <text x="70" y="690" fill="#D4AF37" font-size="13" font-weight="bold">WHY AN AUDIOWORKLET</text>
+  <text x="70" y="712" fill="#9a9a93" font-size="12.5">ScriptProcessorNode runs on the main thread — a busy frame can drop audio blocks and destroy symbol timing. The worklet runs on </text>
+  <text x="70" y="730" fill="#9a9a93" font-size="12.5">the audio thread.</text>
+  <text x="70" y="760" fill="#D4AF37" font-size="13" font-weight="bold">WHY 16 PHASE HYPOTHESES</text>
+  <text x="70" y="782" fill="#9a9a93" font-size="12.5">The receiver does not know where a symbol boundary falls. Parallel hypotheses are started at staggered offsets; the first CRC-va</text>
+  <text x="70" y="800" fill="#9a9a93" font-size="12.5">lid frame wins and the rest are flushed.</text>
+  <text x="70" y="830" fill="#D4AF37" font-size="13" font-weight="bold">CARRIER / SNR ESTIMATE</text>
+  <text x="70" y="852" fill="#9a9a93" font-size="12.5">Spectral coherence (carrier energy ÷ window energy) drives the carrier flag, the SNR estimate and the link-quality bar — no nois</text>
+  <text x="70" y="870" fill="#9a9a93" font-size="12.5">e-floor calibration required.</text>
+  <text x="40" y="922" fill="#9a9a93" font-size="12">src/audio/receiver.ts · src/audio/bfskDemodulator.ts — pure TypeScript, unit-tested in Node.</text>
+</svg>
+

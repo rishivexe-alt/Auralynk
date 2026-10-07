@@ -1,0 +1,17 @@
+﻿{
+  "title": "Auralynk ΓÇö Acoustic Data Communication",
+  "brand": "AURALYNK",
+  "subtitle": "ACOUSTIC DATA COMMUNICATION",
+  "favicon": "./favicon.svg",
+  "mounted": 1,
+  "panels": 2,
+  "sections": 6,
+  "canvas": 2,
+  "txLabel": "Γû╢ TRANSMIT MESSAGE",
+  "rxLabel": "Γùë START LISTENING",
+  "hero": "Send TextThrough Sound.",
+  "footer": "AURALYNK Experimental Acoustic Communication Platform WEB AUDIO API ┬╖ BFSK ┬╖ GOERTZEL DSP ┬╖ CRC-16/CCITT",
+  "htmlBg": "rgb(5, 6, 6)",
+  "resourceFailures": []
+}
+console errors: 0

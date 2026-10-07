@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="930" viewBox="0 0 1200 930" font-family="Consolas, 'Cascadia Mono', 'SF Mono', Menlo, monospace" role="img" aria-label="Channel Calibration">
+  <rect width="1200" height="930" fill="#08090a"/>
+  <rect x="0.5" y="0.5" width="1199" height="929" fill="none" stroke="#2b2721"/>
+  <text x="40" y="52" fill="#D4AF37" font-size="13" letter-spacing="4">AURALYNK · ARCHITECTURE 05</text>
+  <text x="40" y="86" fill="#F3F3F1" font-size="27" font-weight="bold">Channel Calibration</text>
+  <text x="40" y="114" fill="#9a9a93" font-size="14">Measure the room, then choose the carriers — instead of guessing them.</text>
+  <line x1="40" y1="136" x2="1160" y2="136" stroke="#7d6a3a" stroke-width="1"/>
+  <rect x="70" y="172" width="1060" height="92" rx="3" fill="#101214" stroke="#2b2721"/>
+  <rect x="70" y="172" width="3" height="92" fill="#D4AF37"/>
+  <text x="90" y="202" fill="#D4AF37" font-size="12">STEP 1</text>
+  <text x="180" y="203" fill="#F3F3F1" font-size="16" font-weight="bold">FREQUENCY SWEEP</text>
+  <text x="180" y="228" fill="#F3F3F1" font-size="13">plays a test tone at every point in the range</text>
+  <text x="180" y="249" fill="#9a9a93" font-size="12.5">START → STOP → STEP, dwell per tone (default 9000–21500 Hz, 500 Hz step, 250 ms)</text>
+  <line x1="600" y1="269" x2="600" y2="290" stroke="#7d6a3a" stroke-width="1.5"/>
+  <path d="M 595 289 L 605 289 L 600 296 Z" fill="#D4AF37"/>
+  <rect x="70" y="298" width="1060" height="92" rx="3" fill="#101214" stroke="#2b2721"/>
+  <rect x="70" y="298" width="3" height="92" fill="#D4AF37"/>
+  <text x="90" y="328" fill="#D4AF37" font-size="12">STEP 2</text>
+  <text x="180" y="329" fill="#F3F3F1" font-size="16" font-weight="bold">NOISE FLOOR ESTIMATION</text>
+  <text x="180" y="354" fill="#F3F3F1" font-size="13">measures the quiet room before any tone</text>
+  <text x="180" y="375" fill="#9a9a93" font-size="12.5">median microphone RMS level over 600 ms with no test tone present</text>
+  <line x1="600" y1="395" x2="600" y2="416" stroke="#7d6a3a" stroke-width="1.5"/>
+  <path d="M 595 415 L 605 415 L 600 422 Z" fill="#D4AF37"/>
+  <rect x="70" y="424" width="1060" height="92" rx="3" fill="#101214" stroke="#2b2721"/>
+  <rect x="70" y="424" width="3" height="92" fill="#D4AF37"/>
+  <text x="90" y="454" fill="#D4AF37" font-size="12">STEP 3</text>
+  <text x="180" y="455" fill="#F3F3F1" font-size="16" font-weight="bold">CARRIER MEASUREMENT</text>
+  <text x="180" y="480" fill="#F3F3F1" font-size="13">records tone level and local spectral floor</text>
+  <text x="180" y="501" fill="#9a9a93" font-size="12.5">peak magnitude at the tone plus the floor in a guard band 240 Hz away</text>
+  <line x1="600" y1="521" x2="600" y2="542" stroke="#7d6a3a" stroke-width="1.5"/>
+  <path d="M 595 541 L 605 541 L 600 548 Z" fill="#D4AF37"/>
+  <rect x="70" y="550" width="1060" height="92" rx="3" fill="#101214" stroke="#2b2721"/>
+  <rect x="70" y="550" width="3" height="92" fill="#D4AF37"/>
+  <text x="90" y="580" fill="#D4AF37" font-size="12">STEP 4</text>
+  <text x="180" y="581" fill="#F3F3F1" font-size="16" font-weight="bold">CARRIER PAIR SELECTION</text>
+  <text x="180" y="606" fill="#F3F3F1" font-size="13">scores every legal pair</text>
+  <text x="180" y="627" fill="#9a9a93" font-size="12.5">pair 250–3000 Hz apart whose weaker member has the largest narrowband SNR</text>
+  <line x1="600" y1="647" x2="600" y2="668" stroke="#7d6a3a" stroke-width="1.5"/>
+  <path d="M 595 667 L 605 667 L 600 674 Z" fill="#D4AF37"/>
+  <rect x="70" y="676" width="1060" height="92" rx="3" fill="#101214" stroke="#2b2721"/>
+  <rect x="70" y="676" width="3" height="92" fill="#D4AF37"/>
+  <text x="90" y="706" fill="#D4AF37" font-size="12">STEP 5</text>
+  <text x="180" y="707" fill="#F3F3F1" font-size="16" font-weight="bold">APPLY TO TRANSMITTER</text>
+  <text x="180" y="732" fill="#F3F3F1" font-size="13">writes carrier0 / carrier1 into the UI</text>
+  <text x="180" y="753" fill="#9a9a93" font-size="12.5">one click updates transmitter and receiver configuration together</text>
+  <rect x="70" y="802" width="1060" height="74" fill="#14120c" stroke="#7d6a3a"/>
+  <text x="90" y="832" fill="#E8D094" font-size="14" font-weight="bold">WHAT THE NUMBERS MEAN</text>
+  <text x="90" y="856" fill="#9a9a93" font-size="12.5">"Link margin" = tone level − local spectral floor, measured during the sweep. It characterises this sweep in this room — it is not a validated end-to-end link budget.</text>
+  <text x="40" y="912" fill="#9a9a93" font-size="12">src/audio/channelCalibration.ts · verdict thresholds: ≥25 dB good, ≥12 dB marginal, below that poor.</text>
+</svg>
+

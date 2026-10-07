@@ -1,0 +1,33 @@
+{
+  "name": "auralynk",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Browser-based acoustic data communication system — BFSK modem, Web Audio API and real-time DSP, with no server and no specialized hardware.",
+  "license": "MIT",
+  "author": "Rishi P.",
+  "keywords": [
+    "acoustic-modem",
+    "bfsk",
+    "web-audio",
+    "audioworklet",
+    "digital-signal-processing",
+    "goertzel",
+    "crc16",
+    "typescript"
+  ],
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "node scripts/verify-dsp.mjs",
+    "check": "npm run test && npm run build"
+  },
+  "devDependencies": {
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0"
+  }
+}
