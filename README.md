@@ -7,7 +7,9 @@ A browser-based acoustic data communication system: text becomes BFSK sound, tra
 ![License](https://img.shields.io/badge/license-MIT-D4AF37)
 ![DSP tests](https://img.shields.io/badge/DSP%20tests-60%2F60%20passing-D4AF37)
 ![TypeScript](https://img.shields.io/badge/TypeScript-strict-D4AF37)
-![Web Audio](https://img.shields.io/badge/Web%20Audio-API%20%C2%B7%20AudioWorklet-D4AF37)
+![Web Audio](https://img.shields.io/badge/Web%20Audio-API%20%2B%20AudioWorklet-D4AF37)
+
+**🌐 Live Demo:** https://rishivexe-alt.github.io/Auralynk/
 
 ---
 
