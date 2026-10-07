@@ -406,9 +406,6 @@ Possible directions — **none of these are implemented today**:
 - Mobile browser optimisation and touch-first layout work.
 - Performance characterisation across a range of microphones, speakers and rooms.
 
-## Demo
-
-No demo recording ships with the repository — a physical demo is only worth showing if it is real. [`docs/demo/README.md`](docs/demo/README.md) describes how to record one and where to add it.
 
 ## License
 
