@@ -37,6 +37,4 @@ Thumbs.db
 # Packaging artifacts
 *.zip
 
-# Agent / tooling scratch space
-.opencode/
 
